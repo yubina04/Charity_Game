@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Drop Hero</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game-container">
+    <h1>💧 Water Drop Hero</h1>
+    <div class="status-bar">
+      <div>Score: <span id="score">0</span></div>
+      <div>Time: <span id="time">30</span>s</div>
+    </div>
+    <div id="play-area"></div>
+  <div id="game-over" class="hidden">
+    <h2>⏱️ Time’s Up!</h2>
+    <p>Your final score is: <span id="final-score">0</span></p>
+    <img src="https://seppo.net/images/cartoon-well-2km.jpg" alt="Well 2km cartoon" id="well-img" />
+</div>
+
+    <p id="milestone-msg"></p>
+    <button id="reset-btn">Reset Game</button>
+  </div>
+
+  <audio id="sound-clean" src="https://assets.mixkit.co/sfx/preview/mixkit-game-ball-tap-2073.mp3"></audio>
+  <audio id="sound-dirty" src="https://assets.mixkit.co/sfx/preview/mixkit-player-losing-or-failing-2042.mp3"></audio>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</body>
+</html>
+
