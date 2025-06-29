@@ -13,6 +13,24 @@ const soundClean = document.getElementById("sound-clean");
 const soundDirty = document.getElementById("sound-dirty");
 const milestoneMsg = document.getElementById("milestone-msg");
 
+
+const difficulties = {
+  easy:   { time: 45, dropSpeed: 2000, dropInterval: 1200, winScore: 70 },
+  normal: { time: 30, dropSpeed: 1500, dropInterval: 800, winScore: 100 },
+  hard:   { time: 20, dropSpeed: 1000, dropInterval: 500, winScore: 130 }
+};
+
+let currentDifficulty = 'normal';
+
+const difficultySelect = document.getElementById('difficulty');
+if (difficultySelect) {
+  difficultySelect.addEventListener('change', (e) => {
+    currentDifficulty = e.target.value;
+    resetGame();
+  });
+}
+
+
 function launchConfetti() {
   confetti({
     particleCount: 100,
@@ -21,7 +39,9 @@ function launchConfetti() {
   });
 }
 
+
 function startGame() {
+  const settings = difficulties[currentDifficulty];
   score = 0;
   timeLeft = 30;
   dropSpeed = 3000;
