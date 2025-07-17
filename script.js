@@ -31,7 +31,6 @@ if (difficultySelect) {
   });
 }
 
-
 function launchConfetti() {
   confetti({
     particleCount: 100,
@@ -131,3 +130,4 @@ document.body.addEventListener('click', () => {
   soundClean.play().then(() => soundClean.pause());
   soundDirty.play().then(() => soundDirty.pause());
 }, { once: true });
+

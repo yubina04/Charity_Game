@@ -5,51 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Water Drop Hero</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
 </head>
 <body>
+
   <div id="game-container">
     <h1>💧 Water Drop Hero</h1>
+
     <div class="status-bar">
       <div>Score: <span id="score">0</span></div>
       <div>Time: <span id="time">30</span>s</div>
     </div>
+
     <div id="difficulty-select" style="margin-bottom:1em;">
-    <label for="difficulty" style="font-family: 'Montserrat', 'Proxima Nova', Arial, sans-serif; font-weight:600;">Difficulty:</label>
-    <select id="difficulty" style="font-family: 'Montserrat', 'Proxima Nova', Arial, sans-serif;">
-      <option value="easy">Easy</option>
-      <option value="normal" selected>Normal</option>
-      <option value="hard">Hard</option>
-    </select>
+      <label for="difficulty" style="font-family: 'Montserrat', Arial, sans-serif; font-weight:600;">Difficulty:</label>
+      <select id="difficulty" style="font-family: 'Montserrat', Arial, sans-serif;">
+        <option value="easy">Easy</option>
+        <option value="normal" selected>Normal</option>
+        <option value="hard">Hard</option>
+      </select>
+    </div>
 
     <div id="play-area"></div>
-  <div id="game-over" class="hidden">
-    <h2>⏱️ Time’s Up!</h2>
-    <p>Your final score is: <span id="final-score">0</span></p>
-</div>
+
+    <div id="game-over" class="hidden">
+      <h2>⏱️ Time’s Up!</h2>
+      <p>Your final score is: <span id="final-score">0</span></p>
+    </div>
 
     <p id="milestone-msg"></p>
+
     <button id="reset-btn">Reset Game</button>
+
+    <!-- 🌍 Charity Info (Correct Location Under Reset) -->
+    <div id="charity-info" style="margin-top:1em; padding:1em; background:#f4fafd; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.04); text-align:center; font-family:'Montserrat', Arial, sans-serif;">
+      <strong style="font-weight:600;">Make a real-world impact!</strong><br>
+      <span style="font-size:0.97em;">
+        Support access to clean and safe water for communities in need.<br>
+        <a href="https://www.charitywater.org/" target="_blank" style="color:#0077b6; text-decoration:underline;">Learn more at charity: water</a>
+      </span>
+    </div>
   </div>
 
-  <audio id="bg-music" src="Game-Sound.mp3" loop></audio>
-
+  <!-- 🎶 Sound Files -->
+  <audio id="bg-music" src="sounds/Game-Sound.mp3" loop></audio>
   <audio id="sound-clean" src="https://assets.mixkit.co/sfx/preview/mixkit-game-ball-tap-2073.mp3"></audio>
   <audio id="sound-dirty" src="https://assets.mixkit.co/sfx/preview/mixkit-player-losing-or-failing-2042.mp3"></audio>
 
-  <script src="script.js"></script>
+  <!-- 🎉 Confetti Library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-  <div id="charity-info" style="margin-top:2em; padding:1em; background:#f4fafd; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.04); text-align:center; font-family:'Montserrat', 'Proxima Nova', Arial, sans-serif;">
-     <strong style="font-weight:600;">Make a real-world impact!</strong><br>
-     <span style="font-size:0.97em;">
-      Support access to clean and safe water for communities in need.<br>
-       <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer" style="color:#0077b6; text-decoration:underline; font-weight:500;">
-        Learn more at charity: water
-       </a>
-     </span>
-   </div>
+  <!-- 🚀 Your Game Logic -->
+  <script src="script.js"></script>
 
 </body>
 </html>
