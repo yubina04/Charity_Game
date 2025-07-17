@@ -1,3 +1,4 @@
+const bgMusic = document.getElementById("bg-music");
 let score = 0;
 let timeLeft = 30;
 let gameInterval, dropInterval;
@@ -107,6 +108,8 @@ function endGame() {
   finalScore.textContent = score;
   gameOver.classList.remove("hidden");
   resetBtn.disabled = false;
+  bgMusic.pause();
+
 }
 
 resetBtn.addEventListener("click", () => {
@@ -114,6 +117,17 @@ resetBtn.addEventListener("click", () => {
   clearInterval(dropInterval);
   document.querySelectorAll(".drop").forEach((d) => d.remove());
   startGame();
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+
 });
 
 startGame();
+bgMusic.currentTime = 0;
+bgMusic.play().catch(() => {});
+
+document.body.addEventListener('click', () => {
+  bgMusic.play().catch(() => {});
+  soundClean.play().then(() => soundClean.pause());
+  soundDirty.play().then(() => soundDirty.pause());
+}, { once: true });
